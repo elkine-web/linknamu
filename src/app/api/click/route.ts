@@ -1,6 +1,28 @@
 import { NextRequest, NextResponse } from "next/server";
 import getMongoClientPromise from "@/lib/mongodb";
 
+type LinkClickDoc = {
+  linkId: string;
+  count: number;
+};
+
+export async function GET() {
+  const client = await getMongoClientPromise();
+  const db = client.db(process.env.MONGODB_DB || "linknamu");
+
+  const docs = await db
+    .collection<LinkClickDoc>("linkClicks")
+    .find({})
+    .toArray();
+
+  const counts: Record<string, number> = {};
+  for (const doc of docs) {
+    counts[doc.linkId] = doc.count;
+  }
+
+  return NextResponse.json(counts);
+}
+
 export async function POST(request: NextRequest) {
   const { linkId } = await request.json();
 
