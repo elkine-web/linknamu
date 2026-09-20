@@ -6,8 +6,8 @@ export type LinkItem = {
 
 export const profile = {
   name: "우승수",
-  bio: "코딩 할 수 있다",
-  avatarUrl: "https://picsum.photos/seed/linknamu/300/300",
+  bio: "초보개발자 요즘 AI에 관심 많아요",
+  avatarUrl: "/profile.jpg",
 };
 
 export const links: LinkItem[] = [

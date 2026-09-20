@@ -19,7 +19,7 @@ export default function Profile({ name, bio, avatarUrl }: ProfileProps) {
           unoptimized
         />
       </div>
-      <h1 className="text-lg font-semibold">{name}</h1>
+      <h1 className="text-2xl font-bold">{name}</h1>
       <p className="text-sm text-neutral-500 dark:text-neutral-400">{bio}</p>
     </div>
   );
