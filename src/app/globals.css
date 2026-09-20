@@ -7,5 +7,47 @@ html {
 }
 
 body {
-  @apply bg-neutral-50 text-neutral-900 transition-colors dark:bg-neutral-950 dark:text-neutral-50;
+  @apply bg-gradient-to-b from-sky-50 via-white to-pink-50 text-neutral-900 transition-colors dark:from-neutral-950 dark:via-neutral-950 dark:to-neutral-900 dark:text-neutral-50;
+}
+
+@keyframes float-a {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(10px, -26px) rotate(6deg);
+  }
+}
+
+@keyframes float-b {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(-16px, -18px) rotate(-5deg);
+  }
+}
+
+@keyframes float-c {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(12px, -14px) rotate(4deg);
+  }
+}
+
+.animate-float-a {
+  animation: float-a 6.5s ease-in-out infinite;
+}
+
+.animate-float-b {
+  animation: float-b 7.5s ease-in-out infinite;
+}
+
+.animate-float-c {
+  animation: float-c 5.5s ease-in-out infinite;
 }

@@ -2,6 +2,7 @@ export type LinkItem = {
   id: string;
   title: string;
   url: string;
+  icon: string;
 };
 
 export const profile = {
@@ -11,7 +12,7 @@ export const profile = {
 };
 
 export const links: LinkItem[] = [
-  { id: "blog", title: "블로그", url: "https://example.com/blog" },
-  { id: "github", title: "GitHub", url: "https://github.com" },
-  { id: "instagram", title: "Instagram", url: "https://instagram.com" },
+  { id: "github", title: "GitHub", url: "http://github.com/elkine-web", icon: "🐙" },
+  { id: "blog", title: "블로그", url: "https://blog.naver.com/elkine", icon: "📝" },
+  { id: "email", title: "이메일", url: "mailto:elkine@naver.com", icon: "✉️" },
 ];
