@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import getMongoClientPromise from "@/lib/mongodb";
 
+export const dynamic = "force-dynamic";
+
 type LinkClickDoc = {
   linkId: string;
   count: number;
@@ -20,7 +22,9 @@ export async function GET() {
     counts[doc.linkId] = doc.count;
   }
 
-  return NextResponse.json(counts);
+  return NextResponse.json(counts, {
+    headers: { "Cache-Control": "no-store" },
+  });
 }
 
 export async function POST(request: NextRequest) {

@@ -8,7 +8,7 @@ export default function LinksList({ links }: { links: LinkItem[] }) {
   const [counts, setCounts] = useState<Record<string, number>>({});
 
   useEffect(() => {
-    fetch("/api/click")
+    fetch("/api/click", { cache: "no-store" })
       .then((res) => res.json())
       .then((data: Record<string, number>) => setCounts(data))
       .catch(() => {
